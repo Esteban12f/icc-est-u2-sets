@@ -6,10 +6,11 @@ import utils.ContactoComparator;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        runHashSet();
-        runLinkedHashSet();
-        runTreeSet();
-        runTreeSetConComparador();
+        //runHashSet();
+        //runLinkedHashSet();
+        //runTreeSet();
+        //runTreeSetConComparador();
+        runEjercicio();
     }
 
     public static void runHashSet(){
@@ -54,8 +55,16 @@ public class App {
 
     public static void runEjercicio(){
         Set<Contacto> agenda = new TreeSet<>(new ContactoComparator());
-        
-    
+
+        agenda.add(new Contacto("Pedro", "Lopez", "222222222"));
+        agenda.add(new Contacto("Luis", "Perez", "111111111"));
+        agenda.add(new Contacto("Ana", "Perez", "987654321"));
+        agenda.add(new Contacto("Pedro", "Lopez", "123456789"));
+
+        for (Contacto c : agenda){
+            System.out.println(c);
+        }
+
     }
 
 }

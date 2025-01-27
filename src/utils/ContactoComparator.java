@@ -9,14 +9,17 @@ public class ContactoComparator implements Comparator<Contacto>{
     @Override
     public int compare(Contacto c1, Contacto c2) {
         // Primero comparamos apellidos
-        int comparacionApellido = Integer.compare(c1.getApellido().length(), c2.getApellido().length());
+        int comparacionApellido = c1.getApellido().compareToIgnoreCase(c2.getApellido());
         if (comparacionApellido != 0){
-            comparacionApellido = c1.getApellido().compareTo(c2.getApellido());
             return comparacionApellido;
-        } else {
-            int comparacionNombre = Integer.compare(c1.getNombre().length(), c2.getNombre().length());
+        }
+
+        int comparacionNombre = c1.getNombre().compareToIgnoreCase(c2.getNombre());
+        if (comparacionNombre != 0){
             return comparacionNombre;
         }
+
+        return c1.getTelefono().compareTo(c2.getTelefono());
     }
 
 }

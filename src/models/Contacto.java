@@ -29,18 +29,13 @@ public class Contacto {
 
     @Override
     public String toString() {
-        return "Contacto [nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono + "]";
+        return nombre + " " + apellido + " - " + telefono;
     }
 
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-        result = prime * result + ((apellido == null) ? 0 : apellido.hashCode());
-        result = prime * result + ((telefono == null) ? 0 : telefono.hashCode());
-        return result;
+        return nombre.hashCode() + apellido.hashCode();
     }
 
 
